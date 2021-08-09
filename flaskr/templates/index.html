@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Select the PDF you want to compress.</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <script>
+        function loadfunc(){
+        console.log("loadfunc");
+        const targetDiv = document.getElementById("dual-ring");
+        console.log(targetDiv);
+        const btn = document.getElementById("submit");
+        console.log(btn);
+        btn.onclick = function () {
+            alert("onclick");
+            console.log(targetDiv.style.display);
+            targetDiv.style.display = "inline-block";
+        };}
+   </script>
+  </head>
+  <body onload=loadfunc()>
+    <h1>File Upload</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" value="Submit" id="submit"></p>
+    </form>
+    <div class="lds-dual-ring" id="dual-ring"></div>
+  </body>
+</html>
